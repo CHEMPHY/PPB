@@ -1,3 +1,12 @@
+
+###############Plasma Protein Binding (PPB) Prediction ###################
+#Author:Mengyuan Zhu
+#Email: mzhu7@gsu.edu
+#Georgia State University
+#Usage: PPB_calculate.py filename
+##########################################################################
+
+
 import pybel
 from ctypes import *
 import sys
