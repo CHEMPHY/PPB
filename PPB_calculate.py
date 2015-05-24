@@ -6,7 +6,7 @@ import pybel
 lib=CDLL("lib/ppblib.so")
 inputfile=pybel.readfile(sys.argv[1].split(".")[-1],sys.argv[1])
 value=()
-num_molecule=0
+
 
 for mol in inputfile:
 	descvalues=mol.calcdesc()
@@ -24,20 +24,15 @@ for mol in inputfile:
 	value= value+(descvalues.get('dbonds'),)
 	value= value+(descvalues.get('MR'),)
 	value= value+(descvalues.get('abonds'),)
-	maccsfile = open("MACCS.txt", 'r')
-	while True:
-		line_maccs=maccsfile.readline()
-		
-		if not line_maccs:
-			break
-		if line_maccs.find(":")>0:
-			line_maccs=line_maccs[line_maccs.find("'")+1:line_maccs.rfind("'")]
-			if len(line_maccs)>0:
-				smarts = pybel.Smarts(line_maccs)
-				num=smarts.findall(mol)				
-				value= value+(len(num),)			
-	maccsfile.close()
-	line=0
+	
+	smarts = pybel.Smarts("[+]")
+	num=smarts.findall(mol)				
+	value= value+(len(num),)			
+	
+	smarts = pybel.Smarts("[-]")
+	num=smarts.findall(mol)				
+	value= value+(len(num),)
+	
 
 i=0
 array_type=c_double*16
