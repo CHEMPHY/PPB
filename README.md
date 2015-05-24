@@ -1,5 +1,5 @@
 # PPB
-Plasma Protein Binding Rate Prediction Software (ANN based)
+Plasma Protein Binding Rate Prediction Software (Artificial Neural Network based)
 
 Usage: PPB_calculate.py filename
 
