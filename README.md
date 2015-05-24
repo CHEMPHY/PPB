@@ -1,7 +1,7 @@
 # PPB
 Plasma Protein Binding Rate Prediction Software (Artificial Neural Network based)
 
-Usage: PPB_calculate.py filename
+Usage: python PPB_calculate.py filename (Example: python PPB_calculate.py examples/example.mol2)
 
 Supported format (mol, mol2, sdf, smi, etc.)
 
